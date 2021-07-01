@@ -4,7 +4,7 @@ for DevOps Academy in Ciklum
 
 ### CV
 ```
-* Serhii Pytliak
+Serhii Pytliak
 * Male, 31 year old
 * +380507104084
 * pytliak.serhii@gmail.com
