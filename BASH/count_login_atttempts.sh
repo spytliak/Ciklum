@@ -20,6 +20,10 @@ if [ -e "${logUbuntu}" ]; then
   logFile=${logUbuntu}
 elif [ -e "${logCentos}" ]; then
   logFile=${logCentos}
+else
+  echo "======================================================="
+  echo -e "The log didn't found"
+  exit 1
 fi
 echo "========================================================="
 echo -e "The log file:  $logFile"
