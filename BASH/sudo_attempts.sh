@@ -10,10 +10,10 @@
 # Check all users who can login and root privileges
 # Grep sudo from log 
 
-# Check all users who can login 
+# Check all users who can login, example command
 cat /etc/passwd |grep bash |awk -F':' '{ print $1}'
 
-# Check root privileges 
+# Check root privileges, example command
  getent group sudo | cut -d: -f4 |sed 's/,/\n/g'
 
 # Example log with sudo output
