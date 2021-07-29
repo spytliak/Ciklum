@@ -1,4 +1,4 @@
-### Tasks
+### Tasks for create scripts
 ```
 - Set up an SSH client (if you don’t have one).
  - Run a Linux VM locally or on a cloud.
@@ -8,3 +8,7 @@
  * Optional task. Also count how many times each user assumed root privileges.
  ** Optional task. On every login attempt or on assume root privileges post a message in Telegram. Use webhooks, an instruction to configure is here, for instance: https://gist.github.com/dideler/85de4d64f66c1966788c1b2304b9caf1. It’s ok to use a hardcoded token.
  ```
+
+ * [check_logs_login.sh](/BASH/check_logs_login.sh) - The script checks logs for successful or unsuccessful attempts for SSH login (Centos and Ubuntu)
+ * [count_login_atttempts.sh](/BASH/count_login_atttempts.sh) - The script counts successful / unsuccessful login attempts per user
+ * [sudo_attempts.sh](/BASH/sudo_attempts.sh) - The script counts how many times each user assumed root privileges
