@@ -9,10 +9,7 @@
 # Variables
 hostname=$(hostname)
 logUbuntu='/var/log/auth.log'
-logRhel='/var/log/secure'
-OS=$(grep '^ID\>' /etc/os-release | awk -F= '{print $2;}')
-sshCentos=$(journalctl _SYSTEMD_UNIT=sshd.service)
-sshUbuntu=$(journalctl _SYSTEMD_UNIT=ssh.service)
+logCentos='/var/log/secure'
 
 # Check hostname
 echo "========================================================="
@@ -21,8 +18,8 @@ echo "The server name: ${hostname}"
 # Check log file 
 if [ -e "${logUbuntu}" ]; then 
   logFile=${logUbuntu}
-elif [ -e "${logRhel}" ]; then
-  logFile=${logRhel}
+elif [ -e "${logCentos}" ]; then
+  logFile=${logCentos}
 fi
 echo "========================================================="
 echo -e "The log file:  $logFile"
