@@ -6,15 +6,19 @@
 #version          :0.1
 #==============================================================================
 
-# TODO
-# Check all users who can login and root privileges
-# Grep sudo from log 
+# Variables
+userListLogin=$(awk -F: '$2 != "*" && $2 !~ /^!/ { print $1; }' /etc/shadow)
+userSudoList=$(getent group sudo | cut -d: -f4 |sed 's/,/\n/g')
 
-# Check all users who can login, example command
-cat /etc/passwd |grep bash |awk -F':' '{ print $1}'
+# Check all users who can login, and check root privileges
+__userListCanLogin() {
+    echo -e "The list of ssh users: \n ${userListLogin}"
+    echo -e "The list of users with root privileges: \n ${userSudoList}"
+}
+__userListCanLogin
 
-# Check root privileges, example command
- getent group sudo | cut -d: -f4 |sed 's/,/\n/g'
+
+ 
 
 # Example log with sudo output
-Jul 26 06:45:42 ps sudo:       ps : TTY=pts/0 ; PWD=/home/ps ; USER=root ; COMMAND=/usr/bin/date
+# Jul 26 06:45:42 ps sudo:       ps : TTY=pts/0 ; PWD=/home/ps ; USER=root ; COMMAND=/usr/bin/date
